@@ -15,7 +15,7 @@ class AnimePlugin(commands.Cog):
         async with cs.get(f"https://api.jikan.moe/v3/search/anime?q={anime}") as r:
             re = await r.json()
             embed = discord.Embed(
-                description=re["results"][0]["synopsis"], color=0xE9EDF6
+                description=re["results"][0]["synopsis"], color=0x7289DA
             )
             embed.set_author(
                 name=re["results"][0]["title"], icon_url=ctx.author.avatar_url
