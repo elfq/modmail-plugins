@@ -28,7 +28,7 @@ class AnimePlugin(commands.Cog):
             embed.set_footer(
                 text=f"⭐ score: {re['results'][0]['score']} | {re['results'][0]['members']} viewers"
             )
-            await ctx.reply(embed=embed)
+            await ctx.send(embed=embed)
 
 
 def setup(bot: commands.Bot):
