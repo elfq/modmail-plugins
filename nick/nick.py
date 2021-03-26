@@ -25,7 +25,7 @@ class Nick(commands.Cog):
     await msg.add_reaction("✅")
     await msg.add_reaction("❌")
     
-      def check(r, u):
+    def check(r, u):
             return (
                 u.id == ctx.author.id
                 and r.message.channel.id == ctx.channel.id
