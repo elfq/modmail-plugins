@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 
-class NickNamePlugin(commands.Cog):
+class Nick(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
     
@@ -50,7 +50,4 @@ class NickNamePlugin(commands.Cog):
                 
 
 def setup(bot):
-  bot.add_cog(NickNamePlugin(bot))
-
-      
-      
+  bot.add_cog(Nick(bot))
