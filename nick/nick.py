@@ -44,7 +44,7 @@ class Nick(commands.Cog):
               await ctx.author.send(f"✅ Your nickname has been changed to `{name}`")
                                     
             
-       if str(reaction.emoji) == "❌":
+        if str(reaction.emoji) == "❌":
               await ctx.author.send(f"❌ Your nickname request has been declined!")
 
                 
