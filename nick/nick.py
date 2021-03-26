@@ -31,7 +31,7 @@ class Nick(commands.Cog):
         return str(reaction.emoji) in ['✅', '❌'] and user != self.bot.user
 
     try:
-        reaction, user = await self.bot.wait_for('reaction_add', check=check, timeout=3000000)
+        reaction, user = await self.bot.wait_for('reaction_add', check=check, timeout=900000000000000000000000000000)
 
     except asyncio.TimeoutError:
         await ctx.send(".")
