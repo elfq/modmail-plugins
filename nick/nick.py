@@ -37,13 +37,16 @@ class Nick(commands.Cog):
       reaction, user = await self.bot.wait_for("reaction_add", check=check)
         
 
-    
-     if str(reaction.emoji) == "✅":
+    except TimeoutError:
+       await ctx.send(f"_ _")
+            return
+    else:    
+      if str(reaction.emoji) == "✅":
            await ctx.author.edit(nick=name)
            await ctx.author.send(f"✅ Your nickname has been changed to `{name}`")
                                     
             
-     if str(reaction.emoji) == "❌":
+      if str(reaction.emoji) == "❌":
            await ctx.author.send(f"❌ Your nickname request has been declined!")
 
                 
