@@ -50,7 +50,7 @@ class NickNamePlugin(commands.Cog):
                 
 
 def setup(bot):
-  bot.add_cog(NicknamePlugin(bot))
+  bot.add_cog(NickNamePlugin(bot))
 
       
       
