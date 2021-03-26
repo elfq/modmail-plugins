@@ -32,10 +32,8 @@ class Nick(commands.Cog):
                 and str(r.emoji) in ["✅", "❌"]
             )
 
-        try:
-            reaction, user = await self.bot.wait_for(
-                "reaction_add", check=check, timeout=99999999999.0
-            )
+    try:
+        reaction, user = await self.bot.wait_for("reaction_add", check=check, timeout=99999999999.0)
         except TimeoutError:
             return
         else:
