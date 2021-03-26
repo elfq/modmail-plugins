@@ -9,6 +9,7 @@ class NickNamePlugin(commands.Cog):
   
   @commands.command(name="nickr", aliases=["nickrequest", "nrequest", "nr"])
   async def nickname_(self, ctx, name):
+    await ctx.send("Sent a nickname request!")
     
     if len(name) > 32: # Check if a nickname is over the length of 32.
       await ctx.send(":x: You cannot have a nickname this long!")
