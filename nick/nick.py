@@ -9,7 +9,7 @@ class Nick(commands.Cog):
   
   @commands.command(name="nickr", aliases=["nickrequest", "nrequest", "nr"])
   async def nickname_(self, ctx, name):
-    await ctx.send("Sent a nickname request!")
+    
     
     if len(name) > 32: # Check if a nickname is over the length of 32.
       await ctx.send(":x: You cannot have a nickname this long!")
@@ -17,6 +17,7 @@ class Nick(commands.Cog):
     if len(name) < 2: # Check if a name is shorter then 2.
       await ctx.send(":x: Your nickname cannot be this short.")
       
+    await ctx.send("Sent a nickname request!")
     embed = discord.Embed(description = f"**{ctx.author} ({ctx.author.id})** wants their nickname changed to **{name}**.", color = 0x02FF00)
     embed.set_author(name = "New Nickname Request", icon_url = ctx.author.avatar_url)
     embed.set_footer(text = "React with ✅ to approve this nickname, or ❌ to decline it.")
