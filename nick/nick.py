@@ -39,7 +39,8 @@ class Nick(commands.Cog):
 
     except TimeoutError:
        await ctx.send(f"_ _")
-            return
+       return
+    
     else:    
       if str(reaction.emoji) == "✅":
            await ctx.author.edit(nick=name)
