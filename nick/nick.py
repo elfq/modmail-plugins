@@ -31,13 +31,17 @@ class Nick(commands.Cog):
         return str(reaction.emoji) in ['✅', '❌'] and user != self.bot.user
 
     try:
-        reaction, user = await self.bot.wait_for('reaction_add', check=check)
+        reaction, user = await self.bot.wait_for('reaction_add', check=check, timeout=3000000)
 
-    if str(reaction.emoji) == '✅':
+    except asyncio.TimeoutError:
+        await ctx.send(".")
+
+    else:
+        if str(reaction.emoji) == '✅':
            await ctx.author.edit(nick=name)
            await ctx.author.send(f"✅ Your nickname has been changed to `{name}`")
 
-    if str(reaction.emoji) == '❌':
+        if str(reaction.emoji) == '❌':
             await ctx.author.send("❌ Your nickname request has been declined.")
 
                 
